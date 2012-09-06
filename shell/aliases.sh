@@ -24,3 +24,11 @@ alias diff='colordiff'
 alias dmesg='dmesg | ccze -A'
 psc () { /bin/ps $@ | ccze -A; }
 tail () { /usr/bin/tail $@ | ccze -A; }
+
+# My Functions
+function svndiff() {
+    svn diff "${@}" | colordiff
+}
+
+# create temp directory
+alias tf="source ~/.bash/tf"

@@ -91,3 +91,5 @@ source ~/.shell/aliases.sh
 # include variables
 source ~/.shell/variables.sh
 
+# extra configurations
+[ -f ~/.shell/extra.sh ] && source ~./shell/extra.sh
