@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# 1000 klasore kadar bos bir gecici klasor acar ve klasorun icine gider
+#
+# Kullanimi: 
+# 1 - Bu betigi diskinizde bir yere kaydedin or: /home/osman/komut/tf
+# 2 - /etc/bash.bashrc dosyasinin en sonuna sunu yazin:
+#     (satirin basinda # olmayacak)
+#     alias tf="source /home/osman/komut/tf"
+# 3 - Bu islemler bittikten sonra her yeni acilan komut satirinda direk
+#     tf diyerek bu betigi kullanabilirsiniz.
+# 
+i=0
+MAX=1000
+for (( i=0 ; $i <= $MAX; i=$i+1 ))
+do
+    D=/tmp/$i
+    if [ ! -d $D ]
+    then
+        mkdir $D
+        cd $D
+        break
+    fi
+done
+
+if (( $i == $MAX ))
+then
+    echo "reboot etsen iyi olcak : )"
+fi
