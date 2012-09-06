@@ -18,3 +18,9 @@ alias ...="cd ../../.."
 alias ....="cd ../../../.."
 alias .....="cd ../../../../.."
 alias ......="cd ../../../../.."
+
+# colorfull stuff
+alias diff='colordiff'
+alias dmesg='dmesg | ccze -A'
+psc () { /bin/ps $@ | ccze -A; }
+tail () { /usr/bin/tail $@ | ccze -A; }
