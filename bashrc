@@ -92,4 +92,4 @@ source ~/.shell/aliases.sh
 source ~/.shell/variables.sh
 
 # extra configurations
-[ -f ~/.shell/extra.sh ] && source ~./shell/extra.sh
+[ -f ~/.shell/extra.sh ] && source ~/.shell/extra.sh
