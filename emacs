@@ -355,3 +355,13 @@
 (global-hl-line-mode 1)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+;; Auto Complete: http://cx4a.org/software/auto-complete/
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+
+;; Fill Column Indicator: https://github.com/alpaker/Fill-Column-Indicator
+(require 'fill-column-indicator)
+(setq fci-rule-width 5)
+(setq fci-rule-color "gray20")
