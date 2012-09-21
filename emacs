@@ -158,10 +158,9 @@
            (file-name-nondirectory (or (buffer-file-name) default-directory)))))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; END OF COSMETICS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; END OF COSMETICS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SPEED BAR ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SPEED BAR ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; speedbar is cool
 
 ;; Speedbar Customization
@@ -176,25 +175,23 @@
   (setq speedbar-supported-extension-expressions
         '(".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?"
           ".tex\\(i\\(nfo\\)?\\)?" ".el"
-          ".java" ".p[lm]" ".pm" ".py"  ".s?html"  "Makefile.am" "configure.ac"))
+          ".java" ".p[lm]" ".pm" ".py" ".s?html" "Makefile.am" "configure.ac"))
   (setq
    sr-speedbar-width-x 20
    sr-speedbar-right-side t))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SPEED BAR ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SPEED BAR ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; YASNIPPET ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; YASNIPPET ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path
              "~/.elisp/yasnippet")
 
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.elisp/yasnippet/snippets")
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; YASNIPPET ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; YASNIPPET ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Modes
 ;; Don't use tabs in any text-mode
 (add-hook 'text-mode-hook
@@ -210,12 +207,9 @@
       c-basic-offset 4)
 
 (add-to-list 'auto-mode-alist '("\\.psp\\'" . html-mode))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; General Keyboard Fixes
 (global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
 (global-set-key (kbd "C-x r C-w") 'rm-kill-region)
@@ -223,7 +217,8 @@
 (global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (autoload 'rm-set-mark "rect-mark" "Set mark for rectangle." t)
-(autoload 'rm-exchange-point-and-mark "rect-mark" "Exchange point and mark for rectangle." t)
+(autoload 'rm-exchange-point-and-mark
+  "rect-mark" "Exchange point and mark for rectangle." t)
 
 ;; Disable Ctrl Z
 (global-set-key (kbd "C-x C-z") nil)
@@ -240,8 +235,7 @@
 (global-set-key (kbd "C-c s") 'speedbar)
 (global-set-key (kbd "C-c d") "\C-a\C- \C-n\M-w\C-y")
 (global-set-key (kbd "C-x g") 'goto-line)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 ;; show whitespaces at the end of the line
@@ -365,3 +359,9 @@
 (require 'fill-column-indicator)
 (setq fci-rule-width 5)
 (setq fci-rule-color "gray20")
+
+;; User fci-mode for defined modes
+(mapc
+ (lambda (language-mode-hook)
+   (add-hook language-mode-hook 'fci-mode))
+ '(python-mode-hook c-mode-hook lisp-mode-hook))
