@@ -19,6 +19,7 @@
 
 (require 'color-theme-gruber-darker)
 (color-theme-gruber-darker)
+(require 'evernote-mode)
 
 ;; Disable emacs splash screen
 (setq inhibit-startup-message t)
@@ -227,7 +228,7 @@
 (global-set-key (kbd "C-z") 'undo)
 
 ;; Find and Replace
-(global-set-key (kbd "<f4>") 'replace-string)
+;; (global-set-key (kbd "<f4>") 'replace-string)
 
 ;; Auto Complete
 (global-set-key (kbd "<f5>") 'hippie-expand)
@@ -364,4 +365,13 @@
 (mapc
  (lambda (language-mode-hook)
    (add-hook language-mode-hook 'fci-mode))
- '(python-mode-hook c-mode-hook lisp-mode-hook))
+ '(python-mode-hook c-mode-hook lisp-mode-hook js-mode-hook))
+
+;; Python lambda-mode
+(require 'lambda-mode)
+(add-hook 'python-mode-hook #'lambda-mode 1)
+(setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
+
+;; Python pep8
+(require 'python-pep8)
+(require 'python-pylint)
