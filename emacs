@@ -15,11 +15,9 @@
 (condition-case nil
     (color-theme-initialize)
   (error nil))
-;; (color-theme-billw)
 
 (require 'color-theme-gruber-darker)
 (color-theme-gruber-darker)
-(require 'evernote-mode)
 
 ;; Disable emacs splash screen
 (setq inhibit-startup-message t)
@@ -29,9 +27,14 @@
 (setq scroll-conservatively 1)
 (setq scroll-step 1)
 
-;; No Bar
-(tool-bar-mode nil)
+;; No Bar - No menu
 (set-scroll-bar-mode nil)
+
+(tool-bar-mode nil)
+(tool-bar-mode -1)
+
+(menu-bar-mode nil)
+(menu-bar-mode -1)
 
 ;; use setq-default to set it for /all/ modes
 (setq-default mode-line-format
@@ -208,6 +211,8 @@
       c-basic-offset 4)
 
 (add-to-list 'auto-mode-alist '("\\.psp\\'" . html-mode))
+
+(require 'evernote-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -260,7 +265,6 @@
 (setq initial-scratch-message nil)
 
 ;; Hidden Widgets
-(menu-bar-mode nil)
 (line-number-mode t)
 
 ;; Autosave & Backup
@@ -380,3 +384,10 @@
 (add-hook 'c-mode-common-hook
           (lambda()
             (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+
+;; Marmalade repo
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" .
+               "http://marmalade-repo.org/packages/"))
+(package-initialize)
