@@ -212,7 +212,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.psp\\'" . html-mode))
 
-(require 'evernote-mode)
+;; (require 'evernote-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -241,6 +241,7 @@
 (global-set-key (kbd "C-c s") 'speedbar)
 (global-set-key (kbd "C-c d") "\C-a\C- \C-n\M-w\C-y")
 (global-set-key (kbd "C-x g") 'goto-line)
+(global-set-key (kbd "C-c r") 'replace-string)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -391,3 +392,13 @@
              '("marmalade" .
                "http://marmalade-repo.org/packages/"))
 (package-initialize)
+
+;; Php Modes
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
+;; Kill all buffers
+(defun close-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list)))
