@@ -20,3 +20,7 @@ alias gr='guake -r'
 
 # ipythonx
 alias ipythonx='ipython qtconsole'
+
+function hc() {
+    git clone git@192.168.1.241:"${@}"
+}
