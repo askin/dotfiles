@@ -7,7 +7,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; Load directory
-(setq load-path (cons "/home/askin/.elisp" load-path))
+(setq load-path (cons "~/.elisp" load-path))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; COSMETICS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Color Theme
@@ -17,8 +17,7 @@
   (error nil))
 
 (require 'color-theme-gruber-darker)
-(color-theme-gruber-darker)
-
+(load-file "~/.elisp/deviant-theme.el")
 ;; Disable emacs splash screen
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
@@ -210,9 +209,12 @@
 (setq c-default-style "bsd"
       c-basic-offset 4)
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+
 (add-to-list 'auto-mode-alist '("\\.psp\\'" . html-mode))
 
-;; (require 'evernote-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MODES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -349,7 +351,7 @@
 (add-to-list 'default-frame-alist '(width . 130))
 
 ;; Font Size
-(set-face-attribute 'default nil :height 95)
+(set-face-attribute 'default nil :height 125)
 
 ;; activate uppercase - lowercase functions
 (global-hl-line-mode 1)
@@ -376,10 +378,6 @@
 (require 'lambda-mode)
 (add-hook 'python-mode-hook #'lambda-mode 1)
 (setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
-
-;; Python pep8
-(require 'python-pep8)
-(require 'python-pylint)
 
 ;; switch between source and header
 (add-hook 'c-mode-common-hook
