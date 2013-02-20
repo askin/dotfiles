@@ -16,8 +16,6 @@
     (color-theme-initialize)
   (error nil))
 
-(require 'color-theme-gruber-darker)
-(load-file "~/.elisp/deviant-theme.el")
 ;; Disable emacs splash screen
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
@@ -379,6 +377,11 @@
 (add-hook 'python-mode-hook #'lambda-mode 1)
 (setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
 
+;; Python pep8 hooks
+(add-hook 'python-mode-hook
+          (lambda ()
+            (local-set-key  (kbd "C-c p") 'pep8)))
+
 ;; switch between source and header
 (add-hook 'c-mode-common-hook
           (lambda()
@@ -400,3 +403,18 @@
 (defun close-all-buffers ()
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
+
+;; open .md and .markdown files with markdown mode
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+
+;; load deviant theme
+(load-file "~/.elisp/deviant-theme.el")
+
+;; Post current buffer to gist and browse it (require gist)
+(defun gist-buffer-private-browse ()
+  (interactive)
+  (let ((gist-view-gist t))
+    (gist-region-private (point-min) (point-max))))
+
+(global-set-key (kbd "C-c b") 'gist-buffer-private-browse)
