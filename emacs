@@ -418,3 +418,8 @@
     (gist-region-private (point-min) (point-max))))
 
 (global-set-key (kbd "C-c b") 'gist-buffer-private-browse)
+
+;; identica mode
+(setq load-path (cons "~/.elisp/identica-mode" load-path))
+(require 'identica-mode)
+(setq identica-username "kelebek")
