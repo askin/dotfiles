@@ -30,10 +30,6 @@ function svndiff() {
     svn diff "${@}" | colordiff
 }
 
-function gitdiff() {
-    git diff "${@}" | colordiff
-}
-
 # create temp directory
 alias tf="source ~/.bash/tf"
 
