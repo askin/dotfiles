@@ -423,3 +423,10 @@
 (setq load-path (cons "~/.elisp/identica-mode" load-path))
 (require 'identica-mode)
 (setq identica-username "kelebek")
+
+;; Org-mode
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
