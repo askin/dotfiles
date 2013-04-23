@@ -337,7 +337,7 @@
 (add-to-list 'default-frame-alist '(width . 130))
 
 ;; Font Size
-(set-face-attribute 'default nil :height 125)
+(set-face-attribute 'default nil :height 100)
 
 ;; activate uppercase - lowercase functions
 (global-hl-line-mode 1)
