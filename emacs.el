@@ -430,3 +430,6 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+
+;; Browse the current url
+(global-set-key (kbd "C-c u") 'browse-url)
