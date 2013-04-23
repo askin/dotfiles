@@ -256,7 +256,6 @@
  scroll-margin 0
  scroll-conservatively 100000
  scroll-preserve-screen-position 1)
-(line-number-mode t)
 (column-number-mode t)
 
 ;; Major Mode Customization
@@ -264,9 +263,6 @@
 (setq auto-fill-mode 1)
 (setq default-major-mode 'text-mode)
 (setq initial-scratch-message nil)
-
-;; Hidden Widgets
-(line-number-mode t)
 
 ;; Autosave & Backup
 (defvar backup-dir (expand-file-name "~/.emacs.d/backup/"))
@@ -280,14 +276,6 @@
 
 ;; Show line numbers
 (global-linum-mode 1)
-(setq linum-format
-      (lambda (line)
-        (propertize (format
-                     (let ((w (length (number-to-string
-                                       (count-lines (point-min) (point-max))))))
-                       (concat "%" (number-to-string w) "d "))
-                     line)
-                    'face 'linum)))
 
 ;; New
 (fset 'yes-or-no-p 'y-or-n-p)            ;; enable y/n answers to yes/no
