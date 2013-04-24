@@ -1,0 +1,3 @@
+[submodule "elisp/yasnippet/snippets/text-mode/java-mode"]
+	path = elisp/yasnippet/snippets/text-mode/java-mode
+	url = git@github.com:askin/yasnippet-java-mode.git
