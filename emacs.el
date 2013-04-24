@@ -161,27 +161,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; END OF COSMETICS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SPEED BAR ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; speedbar is cool
-
-;; Speedbar Customization
-(require 'sr-speedbar)
-(setq speedbar-mode-hook
-      '(lambda ()
-         (speedbar-toggle-images)
-        (speedbar-toggle-show-all-files)))
-
-;; the in-frame speedbar
-(when (require 'sr-speedbar nil 'noerror)
-  (setq speedbar-supported-extension-expressions
-        '(".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?"
-          ".tex\\(i\\(nfo\\)?\\)?" ".el"
-          ".java" ".p[lm]" ".pm" ".py" ".s?html" "Makefile.am" "configure.ac"))
-  (setq
-   sr-speedbar-width-x 20
-   sr-speedbar-right-side t))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SPEED BAR ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; YASNIPPET ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path
              "~/.elisp/yasnippet")
@@ -220,7 +199,6 @@
 (global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
 (global-set-key (kbd "C-x r C-w") 'rm-kill-region)
 (global-set-key (kbd "C-c g") 'goto-line)
-(global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (autoload 'rm-set-mark "rect-mark" "Set mark for rectangle." t)
 (autoload 'rm-exchange-point-and-mark
@@ -238,7 +216,7 @@
 ;; Auto Complete
 (global-set-key (kbd "<f5>") 'hippie-expand)
 (global-set-key (kbd "C-c f") 'browse-url-firefox)  ;; Firefox
-(global-set-key (kbd "C-c s") 'speedbar)
+;; (global-set-key (kbd "C-c s") 'speedbar)
 (global-set-key (kbd "C-c d") "\C-a\C- \C-n\M-w\C-y")
 (global-set-key (kbd "C-x g") 'goto-line)
 (global-set-key (kbd "C-c r") 'replace-string)
