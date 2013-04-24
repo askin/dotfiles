@@ -237,7 +237,6 @@
 (column-number-mode t)
 
 ;; Major Mode Customization
-(setq-default fill-column 80)
 (setq auto-fill-mode 1)
 (setq default-major-mode 'text-mode)
 (setq initial-scratch-message nil)
@@ -327,17 +326,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
 
-;; Fill Column Indicator: https://github.com/alpaker/Fill-Column-Indicator
-(require 'fill-column-indicator)
-(setq fci-rule-width 5)
-(setq fci-rule-color "gray20")
-
-;; User fci-mode for defined modes
-(mapc
- (lambda (language-mode-hook)
-   (add-hook language-mode-hook 'fci-mode))
- '(python-mode-hook c-mode-hook lisp-mode-hook js-mode-hook))
-
 ;; Python lambda-mode
 (require 'lambda-mode)
 (add-hook 'python-mode-hook #'lambda-mode 1)
@@ -399,3 +387,6 @@
 
 ;; Browse the current url
 (global-set-key (kbd "C-c u") 'browse-url)
+
+;; add fill-column-indicator (fci-mode)
+(require 'init-fill-column-indicator)
