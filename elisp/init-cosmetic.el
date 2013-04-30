@@ -167,7 +167,7 @@
 (add-to-list 'default-frame-alist '(width . 130))
 
 ;; Font Size
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 85)
 
 ;; load deviant theme
 (load-file "~/.elisp/deviant-theme.el")
