@@ -36,3 +36,6 @@ alias tf="source ~/.bash/tf"
 # parallel ssh - scp
 alias pssh="parallel-ssh"
 alias pscp="parallel-scp"
+
+# fucking sudo
+alias fucking="sudo"
