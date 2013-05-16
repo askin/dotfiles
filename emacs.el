@@ -107,6 +107,9 @@
 (setq auto-save-list-file-prefix autosave-dir)
 (setq auto-save-file-name-transforms `((".*" ,autosave-dir t)))
 
+;; use local directory to backup with tramp
+(setq tramp-backup-directory-alist backup-directory-alist)
+
 ;; Remove White Spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -201,15 +204,15 @@
 (require 'identica-mode)
 (setq identica-username "kelebek")
 
-;; Org-mode
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-
 ;; Browse the current url
 (global-set-key (kbd "C-c u") 'browse-url)
 
 ;; add fill-column-indicator (fci-mode)
 (require 'init-fill-column-indicator)
+
+(require 'init-org-mode)
+
+(setq initial-scratch-message
+      (with-temp-buffer
+        (insert-file-contents "~/.elisp/ascii.txt")
+        (buffer-string)))
