@@ -59,3 +59,6 @@ source ~/.shell/aliases.sh
 
 # include variables
 source ~/.shell/variables.sh
+
+# solorized theme
+eval `dircolors ~/.shell/dircolors-solorized/dircolors.256dark`
