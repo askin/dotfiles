@@ -62,3 +62,6 @@ source ~/.shell/variables.sh
 
 # solorized theme
 eval `dircolors ~/.shell/dircolors-solorized/dircolors.256dark`
+
+HISTSIZE=1000000
+HISTFILESIZE=1000000

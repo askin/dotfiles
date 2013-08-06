@@ -42,3 +42,7 @@ alias pscp="parallel-scp"
 
 # fucking sudo
 alias fucking="sudo"
+
+# ant
+alias acj="ant clean && ant jar"
+alias acd="ant clean && ant dist"
