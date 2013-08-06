@@ -24,6 +24,9 @@
 (add-to-list 'load-path
              "~/.elisp/yasnippet")
 
+(add-to-list 'custom-theme-load-path
+             "~/.elisp/emacs-color-theme-solarized")
+
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/.elisp/yasnippet/snippets")
@@ -76,7 +79,6 @@
 (global-set-key (kbd "<f5>") 'hippie-expand)
 (global-set-key (kbd "C-c f") 'browse-url-firefox)  ;; Firefox
 ;; (global-set-key (kbd "C-c s") 'speedbar)
-(global-set-key (kbd "C-c d") "\C-a\C- \C-n\M-w\C-y")
 (global-set-key (kbd "C-x g") 'goto-line)
 (global-set-key (kbd "C-c r") 'replace-string)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; KEYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -216,3 +218,8 @@
       (with-temp-buffer
         (insert-file-contents "~/.elisp/ascii.txt")
         (buffer-string)))
+
+(electric-pair-mode 1)
+
+;; VoiceXML Mode
+(add-to-list 'auto-mode-alist '("\\.vxml\\'" . nxml-mode))

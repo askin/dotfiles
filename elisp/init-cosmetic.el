@@ -173,5 +173,6 @@
 (load-file "~/.elisp/deviant-theme.el")
 
 ;; (set-face-foreground 'mode-line "red")
-
+(blink-cursor-mode t)
+(setq default-cursor-type 'hollow-square)
 (provide 'init-cosmetic)
