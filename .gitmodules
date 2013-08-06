@@ -4,3 +4,6 @@
 [submodule "shell/dircolors-solorized"]
 	path = shell/dircolors-solorized
 	url = git://github.com/seebi/dircolors-solarized.git
+[submodule "elisp/emacs-color-theme-solarized"]
+	path = elisp/emacs-color-theme-solarized
+	url = git://github.com/sellout/emacs-color-theme-solarized.git
