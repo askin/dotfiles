@@ -19,7 +19,7 @@
     ls = ls-files
     # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
-
+    l = log --pretty=oneline
 [color]
     ui = auto
 [color "diff"]
@@ -35,5 +35,7 @@
 
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    editor = emacsclient -t
+    editor = emacsclient -c
     quotepath = false
+[push]
+	default = matching
