@@ -42,7 +42,7 @@
 
 ;; Indentation
 (setq standart-indent 4)
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode t)
 
 ;; C indent with 4 space
 (setq c-default-style "bsd"
@@ -223,3 +223,6 @@
 
 ;; VoiceXML Mode
 (add-to-list 'auto-mode-alist '("\\.vxml\\'" . nxml-mode))
+
+;; init duplicate lines
+(require 'init-duplicate)

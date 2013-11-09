@@ -169,6 +169,8 @@
 ;; Font Size
 (set-face-attribute 'default nil :height 85)
 
+(set-face-attribute 'default nil :font "Source Code Pro-9")
+
 ;; load deviant theme
 (load-file "~/.elisp/deviant-theme.el")
 

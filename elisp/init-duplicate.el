@@ -20,3 +20,6 @@
 
 ;; duplicate a line
 (global-set-key (kbd "C-c d") "\C-a\C- \C-n\M-w\C-y")
+
+;; provide
+(provide 'init-duplicate)
