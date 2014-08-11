@@ -26,7 +26,6 @@ else
 fi
 
 # PS1=${un}'\u'${sc}@${hn}'\h':${sc}'~$ '${wc}
-PS1="${hn}[${sc}${un}\u${sc}@${hn}\h${un}:${sc}${sc}\w${hn}]${un}${dl} ${wc}"
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -60,8 +59,20 @@ source ~/.shell/aliases.sh
 # include variables
 source ~/.shell/variables.sh
 
+# include complete scripts
+source ~/.shell/complete.sh
+
 # solorized theme
 eval `dircolors ~/.shell/dircolors-solorized/dircolors.256dark`
 
 HISTSIZE=1000000
 HISTFILESIZE=1000000
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# add ~/bin directory as a path
+PATH=$PATH:$HOME/bin
+
+PS1="${hn}[${sc}${un}\u${sc}@${hn}\h${un}:${sc}${sc}\w${un}\`__git_ps1 \" (%s)\"\`${hn}]${un}${dl} ${wc}"
+
+# PS1="${hn}[${sc}${un}\u${sc}@${hn}\h${un}:${sc}${sc}\w${hn}]${un}${dl} ${wc} \`__git_ps1 \"(%s)\"\`"
