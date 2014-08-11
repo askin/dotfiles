@@ -224,5 +224,22 @@
 ;; VoiceXML Mode
 (add-to-list 'auto-mode-alist '("\\.vxml\\'" . nxml-mode))
 
+;; Puppet Mode
+(add-to-list 'auto-mode-alist '("\\.pp\\'" . puppet-mode))
+
 ;; init duplicate lines
 (require 'init-duplicate)
+
+(setq puppet-indent-levet 4)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/data/bookmarks"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

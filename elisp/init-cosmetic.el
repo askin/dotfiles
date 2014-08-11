@@ -162,14 +162,17 @@
  uniquify-after-kill-buffer-p t
  uniquify-ignore-buffers-re "^\\*")
 
-;; Emacs Window Geometry
-(add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(width . 130))
+
+
+; (set-face-attribute 'default nil :font "Source Code Pro-9")
+(setq default-frame-alist '((font . "Source Code Pro-9")))
 
 ;; Font Size
 (set-face-attribute 'default nil :height 85)
 
-(set-face-attribute 'default nil :font "Source Code Pro-9")
+;; Emacs Window Geometry
+(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(width . 130))
 
 ;; load deviant theme
 (load-file "~/.elisp/deviant-theme.el")

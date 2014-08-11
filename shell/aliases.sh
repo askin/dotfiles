@@ -8,7 +8,7 @@ alias nocaps="setxkbmap -option ctrl:nocaps"
 alias caps="setxkbmap -option -option capslock:caps"
 alias m='more'
 alias g='grep'
-alias win-office='rdesktop -g 1200x600 -k tr 194.27.61.118'
+alias win-office='rdesktop -g 1200x700 -k tr 194.27.61.118'
 alias ssh-office='ssh -l askin -p 3389 95.183.152.25'
 alias google-dns='echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null'
 
@@ -34,7 +34,7 @@ function svndiff() {
 }
 
 # create temp directory
-alias tf="source ~/.bash/tf"
+alias tf="source ~/.shell/tf"
 
 # parallel ssh - scp
 alias pssh="parallel-ssh"
@@ -46,3 +46,9 @@ alias fucking="sudo"
 # ant
 alias acj="ant clean && ant jar"
 alias acd="ant clean && ant dist"
+
+# rdesktop to virtualbox vms
+alias vm-desktop='rdesktop -g 800x600 -k tr'
+
+# git
+alias branch="git branch"

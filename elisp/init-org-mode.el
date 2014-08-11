@@ -14,4 +14,7 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w@/!)" "IN_PROGRESS(i@/!)" "IZLE(z)" "|" "DONE(d!)" "CANCELED(c@)" "DELEGATE(f@)" "IZLENDI(n)")))
+
 (provide 'init-org-mode)

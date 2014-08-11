@@ -1,5 +1,5 @@
 # My variable
-export EDITOR="emacsclient -t"
+export EDITOR="emacsclient -c"
 
 # Git Variable
 export GIT_AUTHOR_NAME='Aşkın Yollu'
