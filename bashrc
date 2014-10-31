@@ -62,6 +62,8 @@ source ~/.shell/variables.sh
 # include complete scripts
 source ~/.shell/complete.sh
 
+# source ~/.shell/git-prompt.sh
+
 # solorized theme
 eval `dircolors ~/.shell/dircolors-solorized/dircolors.256dark`
 
