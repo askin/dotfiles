@@ -236,7 +236,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/data/bookmarks"))
+ '(bmkp-last-as-first-bookmark-file "/home/askin/.emacs.d/data/bookmarks"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -245,3 +245,9 @@
  )
 
 (require 'init-macros)
+
+;; User 4 space for indenting html files
+(add-hook 'html-mode-hook
+        (lambda ()
+          ;; Default indentation is usually 2 spaces, changing to 4.
+          (set (make-local-variable 'sgml-basic-offset) 4)))
